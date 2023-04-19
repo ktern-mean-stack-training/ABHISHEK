@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 1. How "git revert" command to be used?
+=======
+1.How "git revert" command to be used?
+>>>>>>> testing
