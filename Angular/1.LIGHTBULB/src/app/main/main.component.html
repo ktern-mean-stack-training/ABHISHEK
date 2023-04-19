@@ -1,0 +1,27 @@
+<!-- to fetch the data from the database or (here) from a websit
+1. >app.module.ts
+2. imporing httpclient modules at both packages and imports section
+3. >dataservice.ts
+
+4. creating a function or logic in typescript
+5. >main.component.ts
+6. creating a logic here to fetch the data from the website
+//==========================
+<br>
+<button (click)="fetchDataForm()">GET DATA</button>
+<br>
+//==========================
+-->
+
+<br>
+<p class="lightstatus">The status of bulb is {{lightStatus}}</p>
+<button class="button" (click)="LightOn()">Light On</button>
+<br>
+
+<br>
+<button class="button" (click)="LightOff()">Light OFF</button>
+<br>
+
+<p class="lightstatus">The status of bulb is {{BulbState}}</p>
+<button class="button"  (click)="LightSwitch()">{{SwitchName}}</button>
+

@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "abhishek",
+      "username": "abhi@12",
+      "mail": "abhi@gmail.com",
+      "password": "abhi@123"
+    },
+    {
+      "id": 2,
+      "name": "swaroop",
+      "username": "sw@123",
+      "mail": "sw@gmail.com",
+      "password": "sw"
+    },
+    {
+      "id": 3,
+      "name": "basha",
+      "username": "basha@123",
+      "mail": "ba@gmail.com",
+      "password": "ba"
+    },
+    {
+      "id": 4,
+      "name": "ravi prakhya",
+      "username": "prakhya@180",
+      "mail": "prakhya@gmail.com",
+      "password": "prak"
+    },
+    {
+      "id": 8,
+      "name": "sujatha",
+      "username": "suj@12",
+      "mail": "suj@gma",
+      "password": "su"
+    },
+    {
+      "id": 9,
+      "name": "gotham",
+      "username": "go@123",
+      "mail": "go@gmail.com",
+      "password": "go"
+    },
+    {
+      "id": 15,
+      "name": "vaishnav",
+      "username": "vaish@123",
+      "mail": "va",
+      "password": "va"
+    },
+    {
+      "id": 16,
+      "name": "aravind",
+      "username": "av@1234",
+      "mail": "av@gmail.com",
+      "password": "av"
+    },
+    {
+      "id": 17,
+      "name": "prashanth",
+      "username": "pr@123",
+      "mail": "pr@gmail.com",
+      "password": "pr"
+    },
+    {
+      "name": "CHANDU",
+      "username": "ch@123",
+      "mail": "ch@gmail.com",
+      "password": "ch",
+      "id": 18
+    }
+  ]
+}

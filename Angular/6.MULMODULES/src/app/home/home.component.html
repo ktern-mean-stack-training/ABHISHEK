@@ -1,0 +1,25 @@
+<h1 style="position: relative;">Todays work space</h1>
+<h2>before applying any format.....</h2>
+<h3>Todays date is {{TodaysDate}} </h3>
+<h3>The amount is {{price}}</h3>
+<h2>after applying the format for the pipe...</h2>
+<h3>Todays date is {{TodaysDate | date }}</h3>
+<h3>The amount is {{price | currency}}</h3>
+<h2>we can also make some changes in the format....</h2>
+<h3>Todays date is {{TodaysDate | date:'short'}}</h3>
+<h3>Todays date is {{TodaysDate | date:'shortDate'}}</h3>
+<h3>Todays date is {{TodaysDate | date:'shortTime'}}</h3>
+<h3>The amount is {{price | currency:'CAD':'symbol-narrow'}}</h3>
+<h3>The amount is {{price | currency:'INR':'symbol'}}</h3>
+<h3>The amount is {{price | currency:'EUR':'code'}}</h3>
+
+
+<h2>We can also create a custom pipe....</h2>
+<!-- <h2>To raise a value {{9 | newPipe}}</h2> -->
+<h2>To raise a value {{number}} by 2: <span class="newPipe">{{number| newPipe}}</span></h2>
+<!-- raising the power of value by 2 -->
+
+<h2 [ngStyle]="{'color':colorValue}">Here we are using ng style</h2>
+<h2>The product is <span [ngClass]="{'pr-av': state ==='available','pr-no': state ==='not available'}">{{state}}</span></h2>
+
+<button (click)="parent()">PARENT</button>

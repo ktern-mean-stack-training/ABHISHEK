@@ -1,0 +1,40 @@
+<!-- this is the main app -->
+<!-- <app-navbar></app-navbar> -->
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->
+
+<!--======================================================================== -->
+
+<!-- FOR MULTIPLE PAGES AND NAVIGATING THEM
+1. Generate the components needed
+2. move to nav bar component or where ever the buttons for navigation [navbar.component.ts]
+3. import router  == import {Router} from '@angular/router';
+4. then assign the constructor == constructor(private route: Router) {}
+5. then move to app.routing.module.tsng
+6. for routing the pages, mention the path of the component and name of the componet
+
+const routes: Routes = [{
+  path: "home",
+  component: HomeComponent
+
+},
+{
+  path: "about",
+  component: AboutComponent
+},
+{
+  path: "**",
+  component: ErrorpageComponent
+}
+
+];
+
+7. after importing and assigning all the components, move to the navbar [or buttons used for navigating] here we can use the component navbar
+8. move to navbar.html and then create the buttons also assign commands to the actions for those buttons
+9. to assign logics to those buttons move to navbar.ts
+10. create functions to navigate to each and every component.
+
+
+
+
+ -->

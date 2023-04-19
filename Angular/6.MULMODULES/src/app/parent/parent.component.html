@@ -1,0 +1,19 @@
+<h2>THIS IS PARENTS ONE</h2>
+<app-child [userDataChild]="userDataParent" (userAddedSal)="updatedUserData($event)"></app-child>
+
+
+
+<!--
+==================parent child communication=============================
+1. create two components like one is parent and the other is child
+2. @input decorator is used to share information from parent to the child
+3. @Output decorator is used to share information from child to the parent.
+4. initially assign some data to an array variable["userDataParent"] in the ts file and try to share the data from parent to child
+5. so to do it, firstly route the child component selector in the parent comonent [refer line 2]
+6. and then assign the childcomponent variable, here["userDataChild"] and pass the parent data ["userDataParent"].
+7. move to child.component.ts
+8. assign the input decorator and name of the variable ['userDataChild']
+9. consoling the data sent from the parent to the child in the childcomponent
+10. and then after performing some actions like adding a new attribute salart to the data.
+11. using output decorator passing the updated information from child to parent along with event Emitter.
+ks-->

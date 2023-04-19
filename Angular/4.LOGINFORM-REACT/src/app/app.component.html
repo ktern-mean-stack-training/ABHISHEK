@@ -1,0 +1,41 @@
+<router-outlet></router-outlet>
+<!-- <app-login></app-login> -->
+
+<!--
+1. Creating two component 1.home, 2.login
+=========in app.module.ts============
+2. importing forms module and reactive forms module
+========app-routing.module.ts========
+3. route the path for login and its component here
+4. also for remaining components that are being used here.
+=======login.component.ts===========
+5. to work on forms
+6. import FormsGroup and ReactiveFormsGroup
+7. create a new loginform group
+8. injecting form builder instance in constructor
+9. altering form group type to any and specifyng the fields that are necessary inside the form builder.
+===========login.component.html===============
+10. creating a form tag and connecting it to formGroup
+11. creating the input boxes for user input like username and password along with the Button for login
+12. so to connect the user given data to the methods, here we have to use formControlName to connect the user given data to the specified
+fields that we had assigned in ts file.
+13. to assign a login to the LOGIN Button, creating a logic for it in ts file
+===========login.component.ts===============
+14. creating a logic to console the values that are entered
+15. so whenever by entering the credentials and clicking the button, the details will be consoled in the inspect page.
+16. to compare and allow the user with correct login credentials
+17. storing the values in a constant and comparing the entered password with the actual pw.
+=================================================================
+
+now to navigate from login page to home page
+
+18. since we had already mentioned the path and component of home page
+19. do this to import router, import {Router} from '@angular/router';
+20. import the Router module from @angular/router in our component and inject it in the constructor.
+constructor(private formBuilder: FormBuilder, private router: Router) { } // inject the Router module
+21. now to route the home page upon giving the correct credentials
+=====================login.component.ts========================
+22. giving the statement as to navigat the page if password matches
+this.router.navigate(['home'])
+
+ -->

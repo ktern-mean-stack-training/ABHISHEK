@@ -1,0 +1,49 @@
+
+<router-outlet></router-outlet>
+<app-home></app-home>
+
+
+
+
+<!--
+
+=============IN Termianl============================
+ng add @angular/material
+=============IN APP.MODULE.TS ======================
+import {HttpClientModule} from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+=============
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    //====ADD THESE IN IMPORTS====
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule
+=====================================================
+===============IN dataservice.ts======================
+1.import {HttpClient} from '@angular/common/http';   //injecting HttpClient
+2. to get the data from the website:
+getUserData(){
+  return this.http.get("https://jsonplaceholder.typicode.com/users")
+}
+=====================================================
+3. create a component where the data to be fetched should display -- ng g c home
+4. create a component for service -- ng g s data
+==============IN home.component.ts=====================
+5. Import the modules
+6. defining columns to be displayed from the website data
+7. writing a logic to fetch the data from the website in the form of tables using MatTableDataSource.
+=============IN home.component.html====================
+
+8. creating a button for fetching the data into page
+9. creating the table to be used for the data that gets the data from datasource
+10. defing each colum like name of the attribute, data for that column.
+============IN home.component.csss====================
+11. giving the style sheets for each and every containers and tags.
+
+
+-->
+

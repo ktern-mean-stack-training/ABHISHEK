@@ -1,0 +1,41 @@
+<!-- <p>regpage works!</p> -->
+
+<div class="register-container">
+  <form [formGroup]="regForm">
+
+    <h2>Register PAGE</h2>
+    <!-- name -->
+    <div class="input-container">
+      <input type="name" placeholder="ENTER YOUR NAME" formControlName="name">
+      <i class="fa fa-envelope-o"></i>
+    </div>
+    <!-- username -->
+    <div class="input-container">
+      <input type="username" placeholder="ENTER USERNAME" formControlName="username">
+      <i class="fa fa-lock"></i>
+    </div>
+    <!-- email -->
+    <div class="input-container">
+      <input type="email" placeholder="ENTER THE EMAIL" formControlName="mail">
+      <i class="fa fa-lock"></i>
+    </div>
+    <!--password-->
+    <div class="input-container">
+      <input type="password" placeholder="ENTER PASSWORD" formControlName="password">
+      <i class="fa fa-lock"></i>
+    </div>
+
+
+
+
+    <br><br>
+    <button (click)="onRegister()">REGISTER</button>
+
+    <!-- <button (click)="postEmployeeDetails()">REGISTER</button> -->
+
+  </form>
+
+  <button (click)="onLogin()">LOGIN</button>
+</div>
+
+
