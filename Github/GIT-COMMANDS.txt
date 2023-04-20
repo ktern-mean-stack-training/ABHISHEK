@@ -1,5 +1,13 @@
-<<<<<<< HEAD
 1. How "git revert" command to be used?
-=======
-1.How "git revert" command to be used?
->>>>>>> testing
+
+"Git revert" allows us to undo our previous command with the reference of commits hash code, for hash we can use "git log". git revert is just used to create a new commit that just undergoes the previous commit, but would not erase the commit, if to erase the commit, we can use "git reset".
+
+so, the history of the commit will not erase, but only the changes made by the commit will!
+
+2. Difference between "git revert" and "git reset --hard <hash-id>"?
+
+Git revert creates a new commit that undergoes or undo the changes made by the previous commit, we can achieve this with reference to commits hash code, whereas git reset will automatically erase the history of the commit as well as changes made by the previous commit, as like as revert, for this also referring to hash code of the commit is necessary.
+
+3. Difference between "git merge" and "git pull".
+
+Git merge is used to merge different branches as a single branch in the remote repository, whereas git pull is about fetching the changes made by the remote repository into the local repository. 
