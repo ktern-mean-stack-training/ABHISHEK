@@ -1,3 +1,5 @@
+//============================PRACTICE FILE===========================
+
 //this is the main file where we are running the code.
 // we have to install express [if not present]
 
@@ -17,10 +19,11 @@ app.get("/first",(req,res)=>{  //in the local host routing to "first" and then a
     })
 });
 //================ Using input body type====================
-// using this post command, we can fetch the userdata and from the first and assigning them to variables and returning them .
+// using this post command, we can fetch the userdata and from the "first" and assigning them to variables and returning them .
 app.post("/first",(req,res)=>{
     let userInput =req.body.lastname;  //assigning posted lastname as userInput and same as to another parameter.
     let userInput2 = req.body.name;
+    // console.log(typeof userInput)
 
     res.send({
         lastname: userInput,
@@ -112,6 +115,11 @@ app.post("/studata/:id", (req, res) => {  //studata->name of the router and id i
       student: result,
     });
   });
+
+
+  //================================
+
+  
   
   //==========================================================
   app.listen(4000, () => {

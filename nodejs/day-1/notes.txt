@@ -1,0 +1,48 @@
+    
+    ======================for adding the students into array db=============================
+    1. creating an api with routing "/first".
+    2. initiating requests from body into variables
+    3. pushing them into an empty array as seperate objects
+    4. send the respone
+
+    ======================to update the student details========================
+    1. creating an api with routing "/update/:id". [while dealing with id's(numericals as strings)
+       we have to convert them into integers for operations]
+    2. assigning a variable for req of body
+    3. running a loop on every student from the array students
+    4. if the input "id" mathes with any of the "id" in the array, then continue else abort
+    5. assigning every attribute of the db array to the updated array attributes
+    6. sending the success message and returning the updated data of the student
+    7. here while giving the input, we have to mention each and every key and can modify the required values
+
+    =======================to delete an entry==================================
+    1. creating an api with "/delete/:id".
+    2. assigning a variable for id.
+    3. running a for loop [running on indices not on elements, so that we can know on which id, the operation should happen]
+    4. using splice method to delete the entry of data 
+            splice(i,1); here i is the index of data to be deleted,
+            whereas 1 refers to how many data entry's from the index should delete, here in this case only one(self)
+    5. sending the respone as whole students.
+    
+    =======================to retrieve a single student data====================
+    1. running a loop on all the students and considering each as a student
+    2. if user id matches with any of the students userid in the db
+    3. then sending the respone of that particular student
+
+    =======================to include percentage===========================
+    1. since we have to calculate the percentage for all the students
+    2. we have to run a loop on the students in the db
+    3. calculating percentage and assigning the value to a variable
+    4. to store the data of students db[initial data] along with the additional percentage 
+    5. considering a new empty array
+    6. pusing all the students attributes into it along with the percentage attribute.
+    7. sending the whole student as respone.
+
+    ======================to filter students >80%===========================
+
+    1. same as like as the above api.
+    2. but running an if condition to check whether the percentage >80 or not
+
+    ======================cutoff > 80=======================================
+
+    1. same as like as above, just math is different
