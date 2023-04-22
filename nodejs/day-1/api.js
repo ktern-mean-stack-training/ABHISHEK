@@ -23,7 +23,7 @@ const result =[]
 
 let count=1;
 //=============1. to add new student========================DONE
-app.post("/regi",(req,res)=>{
+app.post("/register",(req,res)=>{
 
     let student_name =req.body.name;
     let maths_marks =parseInt(req.body.maths);
@@ -117,7 +117,7 @@ app.get("/students",(req,res)=>{
 
 //===========6. along with percentage================DONE
 
-app.get("/perc",(req,res)=>{
+app.get("/percentage",(req,res)=>{
     // let result =[]
 
     for (let student of students){
@@ -143,7 +143,7 @@ app.get("/perc",(req,res)=>{
     res.send(result);
 })
 //===========7. percentage >80=======================DONE
-app.get("/elig",(req,res)=>{
+app.get("/eligibility",(req,res)=>{
 
     let eligibleStudents = []
 
