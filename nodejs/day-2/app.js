@@ -8,6 +8,8 @@ for (i=0;i<=5;i++){
 //================================================================
 //Iterating over an array using for loop
 car=["bmw","audi","swift"]
+
+
 for (i=0;i<car.length;i++){
     text ="the car is:"+ car[i]
     // console.log(text)
@@ -114,3 +116,4 @@ console.log(getprint(1000))
 console.log("4")
 //================================================================
 
+// 

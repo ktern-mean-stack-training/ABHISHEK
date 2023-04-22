@@ -3,7 +3,7 @@
     1. creating an api with routing "/first".
     2. initiating requests from body into variables
     3. pushing them into an empty array as seperate objects
-    4. send the respone
+    4. send the respone.
 
     ======================to update the student details========================
     1. creating an api with routing "/update/:id". [while dealing with id's(numericals as strings)

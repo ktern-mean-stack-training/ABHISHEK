@@ -11,15 +11,17 @@ app.use(express.json())
     "name":"abhisek",
     "maths":40,
     "phy":49,
-    "che":98,
-    "eng":99,
-    "percentage":90
+    "chem":98,
+    "eng":99
+
 }
 ===============================================
 */
 
 const students =[]; //arrays used for storing the student details
 const result =[]
+
+
 
 let count=1;
 //=============1. to add new student========================DONE
@@ -46,7 +48,7 @@ app.post("/register",(req,res)=>{
     // console.log(student_name)
 
     res.send({
-        msg: "student register successfully", name:student_name
+        msg: "student register successfully", name:student_name,count
     })
 })
 
@@ -54,19 +56,51 @@ app.post("/register",(req,res)=>{
 
 
 app.put("/update/:id",(req,res)=>{
-
+    console.log("update is working")
     const id = (req.params.id); //initially the id is a string and to perform actions on it, we should convert
     const update=req.body
+    console.log("id",update)
 
     for (let student of students){                  //here attributes of both student and update should be same as like as in db.
         if (student.id === parseInt(id)){
             console.log("student found",student.name)
             console.log(student)
-            student.name = update.name;
-            student.maths = update.maths;
-            student.physics = update.phy;
-            student.chemistry = update.chem;
-            student.english = update.eng;
+
+            if ('name' in req.body){
+                
+                student.name = update.name;
+            }
+
+            if ('maths' in req.body){
+                // console.log("maths called")
+                student.maths = update.maths;
+
+            }
+
+            if ('chem' in req.body){
+                student.chemistry = update.chem;
+
+            }
+            if ('phy' in req.body){
+                student.physics = update.phy;
+
+            }
+
+            if ('eng' in req.body){
+                student.english = update.eng;
+
+            }
+
+
+
+
+
+
+
+            // student.maths = update.maths;
+            // student.physics = update.phy;
+            // student.chemistry = update.chem;
+            // student.english = update.eng;
 
             res.send({
                 msg: "student details updated successfully",
