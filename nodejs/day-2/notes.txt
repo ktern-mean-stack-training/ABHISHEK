@@ -1,0 +1,18 @@
+.insertOne() -- to insert the userdata into db
+.updateOne() -- to update the userdata of db
+.deleteOne() -- to delete the userdata of db
+.findOne() -- to find or retrieve the userdata of db
+.find().toArray() -- to retrieve all the users of db
+here toArray() is use to convert the results into an array
+.aggregate() --to perform mathematical equations
+$project() --to add the required attributes
+
+===================================================================
+1. create two js files one api and the other is for mongo
+========at api.js========
+2. initialize express libraries 
+3. assign a variable to connect with mongodb client
+========at mongoapi======
+4. import the required files like objectId and Mongoclient
+=======To create api=======
+=======At api.js===========
