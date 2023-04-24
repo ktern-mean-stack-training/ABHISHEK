@@ -35,7 +35,7 @@ stu = "abhishek"
 //for-of
 for (x of stu){    //iterates over the values of object
     spell=x
-    // console.log(x)
+    console.log(x)
 }
 //for-in
 for (x in stu){   //iterates over the properties or keys of object

@@ -111,9 +111,38 @@ app.get("/cutoff", async(req,res)=>{
     dbUrl ="mongodb://localhost:27017"
     dbName="userdb"
 
-    const Cutoff = await userModel.cutOff(dbUrl,dbName)
+    // const Cutoff = await userModel.cutOff(dbUrl,dbName)
 
-    res.send({Cutoff})
+    //======
+    const students = await userModel.allUserDetails(dbUrl, dbName)
+    //=======
+    let eligibleStudents = []
+
+    for (let student of students){
+        let totalMarks=parseInt((((student.maths)/100)*0.50) + (((student.physics)/100)*0.25)+ (((student.chemistry)/100)*0.25));
+
+        let cutoff = (((student.maths)/100)*0.50)+(((student.physics)/100)*0.25)+(((student.chemistry)/100)*0.25)
+        console.log(cutoff)
+        let mar =cutoff*100
+        console.log(mar)
+        // let percentage = (totalMarks/4);
+
+        if (mar > 80){
+            eligibleStudents.push({
+                id: student.id,
+                name: student.name,
+                maths: student.maths,
+                physics: student.physics,
+                english: student.english,
+                chemistry: student.chemistry,
+                cutoff: ((cutoff)*100)
+            })
+        }
+        // console.log("not found")
+    }
+
+
+    res.send({students})
 })
 
 
