@@ -105,13 +105,13 @@ const verifyToken = (req, res, next) => {
       const token = authHeader.split(" ")[1];
       jwt.verify(token, secretkey, (err, user) => {
         if (err) {
-          return res.sendStatus(403);
+          return res.send("invalid token");
         }
         req.user = user;
         next();
       });
     } else {
-      res.sendStatus(401);
+      res.send("token should be present in autherization header");
     }
   };
 
