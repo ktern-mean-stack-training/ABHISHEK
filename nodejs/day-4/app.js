@@ -13,13 +13,10 @@ const userModel = require("./mongo");   // to import the mongodb file
 const { MongoClient, ObjectId } = require("mongodb");
 
 //=====MIDDLE========
-const verify = require('./middle')
+// const verify = require('./middle')   
 
 
-//=================================================================
 //To register the student and saving the data into database
-
-
 app.post("/register", async (req,res)=>{        
     dbUrl = "mongodb://localhost:27017"  //url of the database
     dbName = "CLASS"                    //name of the db working on
@@ -35,9 +32,9 @@ app.post("/register", async (req,res)=>{
     })
 })
 
-//To give the marks for each student
+//To give the marks for each student [a post to method, to give marks for each student]
 
-app.post("/marks", async(req,res)=>{
+app.post("/addmarks", async(req,res)=>{
     dbName = "CLASS"
     const userdetails = req.body;
     const addmarks = await userModel.addmarks(dbUrl,dbName, userdetails)
@@ -59,9 +56,6 @@ const usermail = req.body.email;
 const password = req.body.password
 
 const getUser = await userModel.getUserDetails(dbUrl,dbName, usermail, password)
-
-
-
 // to check the user details and generating a autherization token
 if (getUser !== null){
     const token = jwt.sign(getUser, secretkey, { expiresIn: '1h' });
@@ -101,12 +95,10 @@ else {
     res.status(401).send({error: "invalid email or password"})
 
 }
-
-
 });
 
 
-//=====MIDDLE for authorization========
+//=====MIDDLEWARE code for authorization========
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (authHeader) {
@@ -123,10 +115,9 @@ const verifyToken = (req, res, next) => {
     }
   };
 
+// To get the marks of the authenticated user upon keeping the token in headers.authorization
 
-// To get the marks of the authenticated user
-
-app.get("/marks", verifyToken, async (req, res) => {
+app.get("/showmarks", verifyToken, async (req, res) => {
     const dbName = "CLASS";
     const client = await MongoClient.connect(dbUrl);
   
@@ -143,9 +134,6 @@ app.get("/marks", verifyToken, async (req, res) => {
 
 
     })
-
-
-
 
 //========================================
 app.listen(4000, () => {
