@@ -105,7 +105,7 @@ const verifyToken = (req, res, next) => {
       const token = authHeader.split(" ")[1];
       jwt.verify(token, secretkey, (err, user) => {
         if (err) {
-          return res.send("invalid token");
+          return res.send("invalid token, check with it again");
         }
         req.user = user;
         next();
