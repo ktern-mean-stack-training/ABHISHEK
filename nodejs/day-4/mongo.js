@@ -16,14 +16,37 @@ module.exports.addUserDetails = async(url,dbName, userData)=>  {   //exporting t
  
 }
 
+//To find ID of the students to give marks [to get token for the student ID field]
+
+module.exports.findid= async(url,dbName, userId)=>{
+    const client = await MongoClient.connect(url)
+    // console.log(userId,"at mongo before calling")
+
+    // id = userId.tostring()
+    // console.log(id)
+
+    console.log({_id: new ObjectId(userId)},"before calling at mongo")
+    const findid = await client
+        .db(dbName)
+        .collection('users')
+        // .findOne({_id: new ObjectId(userId).toString()})
+        .findOne({_id:new ObjectId(userId) })
+
+    console.log(findid,"at mong after calling")
+
+    return findid
+}
+
 //To give the marks for each student
 
-module.exports.addmarks= async(url, dbName, userData)=>{
+module.exports.addmarks= async(url, dbName, userData, userId)=>{
     const client = await MongoClient.connect(url)
     const addmarks = client
         .db(dbName)
         .collection("marks")
-        .insertOne(userData)
+        // .insertOne(userData)
+        // .insertOne({refid: new ObjectId(userId)},{ userData })
+        .insertOne({refid: new ObjectId(userId), userData})
 
     return addmarks;
 }
@@ -41,7 +64,7 @@ module.exports.getUserDetails = async(url, dbName, usermail, password)=>{
 
         // return {user: getUser, ObjectId: getUser._id}
         return (getUser)
-
+        
 }
 
 

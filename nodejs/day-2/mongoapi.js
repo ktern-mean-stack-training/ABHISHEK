@@ -146,7 +146,7 @@ module.exports.cutOff = async(url,dbName)=>{
                     english:1,
                     
                     // cutoff: {$add:[{$divide:["$maths",0.5]},{$divide:["$physics",0.25]},{$divide:["$chemistry",0.25]}]}
-                    cutoff: {$divide:[{$add:[{$divide:["$maths",0.5]},{$divide:["$physics",0.25]},{$divide:["$chemistry",0.25]}]},10]}
+                    cutoff: {$divide:[{$add:[{$multiply:["$maths",0.5]},{$multiply:["$physics",0.25]},{$multiply:["$chemistry",0.25]}]},10]}
 
                     
                 }
