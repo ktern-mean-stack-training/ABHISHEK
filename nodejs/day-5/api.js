@@ -1,3 +1,23 @@
+/*
+
+===>TO UPDATE THE STARTEDON, COMPLETEDON, WEIGHTAGE OF THE DATA OBJECTS.
+API -> updates/id
+
+here upon calling the api, the parent tasks fields are updated accordingly[min started date of child tasks, max completed date and 
+weightage of the child tasks].
+
+
+===>TO DISTRIBUTE THE MILESTONES OF THE PARENT AMONG ALL THE BRACHES OF CHILDTASKS.
+API ->milestones/id
+
+here the milestones of the parent will be evenly distributed to all the child tasks and then 
+
+if any of the child tasks have an another branch, then the loop will run accordingly and leads to distribute the milestone for all the 
+branches evenly. 
+
+
+*/
+
 const express = require("express");
 const app = express();
 app.use(express.json())
