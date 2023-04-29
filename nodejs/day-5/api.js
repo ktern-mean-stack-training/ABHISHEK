@@ -150,7 +150,7 @@ function getChild(parentId) {
             id, refid,startedon, completedon,weightage,milestone 
         }
         
-        const grandChildTasks = getChild(task.id); 
+        const grandChildTasks = getChild(task.id);  // a recursive function to fetch grand child tasks 
         child.push(date,grandChildTasks);
         // child.push(); //to get the grand child
       }
@@ -158,7 +158,7 @@ function getChild(parentId) {
     }
       const flatchild = flattenArray(child); // to merge and keep the nested array as a single array, so that accessing id's are easy
       
-      return flatchild;
+      return flatchild; //Sends the childtasks of parent as a single array
     
 
 
@@ -179,7 +179,7 @@ function getmin(childtasks){
 
   console.log(mindate);
 
-  return (mindate)
+  return (mindate) //return the minimum date of parent ID
 }
 //=====================================================================================
 
@@ -200,7 +200,7 @@ function getmax(childtasks){
 
   console.log(maxdate)
 
-  return (maxdate)
+  return (maxdate) //returns the maximum date of the parent
 }
 
 //=====================================================================================
@@ -215,7 +215,7 @@ function getadd(childtasks){
 
   console.log(weight,{msg:"weight of the parent id"})
 
-  return weight;
+  return weight; //returns the weightage of the parent
 }
 
 //=====================================================================================
@@ -283,7 +283,7 @@ function getmile(childtasks,id,parId){
   console.log("these are final output that should be returned:")
   console.log(mergechild);
 
-  return mergechild;
+  return mergechild; // along with child tasks of parent, here grand child tasks are also included[ie from getmilechild also]
   
 
   
@@ -338,7 +338,7 @@ function getmilechild(childtasks,childid,milestone){
 
   
   // return childrens
-  return childmilestone //=========================================================
+  return childmilestone // [updating the milestone of childest tasks of parent and sharing it to child tasks array]
   
 
 }
