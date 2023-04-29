@@ -291,6 +291,7 @@ function getmile(childtasks,id,parId){
 }
 
 //=====================================================================================================
+//consider this as a sub function to run a recursive loop on childest tasks of parent [ie child of (child of parent tasks)]
 function getmilechild(childtasks,childid,milestone){
 
   console.log("at getmilechild, second get")
