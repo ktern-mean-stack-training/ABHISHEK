@@ -170,6 +170,7 @@ function getChild(parentId) {
             id, refid,startedon, completedon,weightage,milestone 
         }
         
+        
         const grandChildTasks = getChild(task.id);  // a recursive function to fetch grand child tasks 
         child.push(date,grandChildTasks);
         // child.push(); //to get the grand child
@@ -431,7 +432,8 @@ app.put("/updates/:id",(req,res)=>{
     DATA = {id:data[parentIndex].id,
             refid:data[parentIndex].refid,
             startedon:data[parentIndex].startedon,
-            completedon:data[parentIndex].completedon}
+            completedon:data[parentIndex].completedon,
+            Weightage:data[parentIndex].weightage}
           
     // res.send(data[parentIndex]) //sending the updated data of the parent wrt its child tasks
 
@@ -478,7 +480,7 @@ app.put("/milestones/:id",(req,res)=>{
   // console.log(childtasks);
   //====================================
 
-  if(childtasks.length>1){
+  if(childtasks.length>0){
 
     console.log("yes! length of child tasks for id:",parentId,"are >1:")
 
@@ -488,17 +490,15 @@ app.put("/milestones/:id",(req,res)=>{
 
     family =[parent,mile]
 
-    res.send(family)
+    res.send({msg:"here you can find the milestone of the task:",family})
 
   }
-
-  else{
-    res.send(data[parentIndex])
-  }
-
   
 
-
+  else{
+    
+    res.send(data[parentIndex])
+  }
 
 
 });

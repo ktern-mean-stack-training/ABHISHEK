@@ -3,7 +3,7 @@
 .deleteOne() -- to delete the userdata of db
 .findOne() -- to find or retrieve the userdata of db
 .find().toArray() -- to retrieve all the users of db
-here toArray() is use to convert the results into an array
+here .toArray() is use to convert the results into an array
 .aggregate() --to perform mathematical equations
 $project() --to add the required attributes
 
