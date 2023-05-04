@@ -361,6 +361,7 @@ function segregatedata(data,parentId){
 
     min = getmin (parentchildrens); //startedon
     max = getmax(parentchildrens);  //completedon
+    wei = getadd(parentchildrens) //to add the weights
     //=======================
     console.log("this is the min of childrens at seg2..........");
     console.log(min)
@@ -377,6 +378,7 @@ function segregatedata(data,parentId){
         if (data[i].id === par2){
             data[i].startedon=min; //updating startedon of parent
             data[i].completedon=max; //updating completedon of parent
+            data[i].weightage=wei;
         }
     }
 

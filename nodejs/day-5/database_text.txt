@@ -1,0 +1,118 @@
+
+THE DATABASE USED AT REQ.BODY
+
+[
+
+    {
+    "id": 1,
+    "refid":"",
+    "startedon": "2023-01-02",
+    "completedon": "2023-01-02",
+    "weightage": 10,
+    "milestone": 270
+    },
+    
+    {
+        
+        "id": 2,
+        "refid": 1,
+        "startedon": "2022-01-02",  //mar-03
+        "completedon": "2019-01-02", //may-15
+        "weightage": 20,
+        "milestone": 30
+    },
+    {
+        
+        "id": 6,
+        "refid": 1,
+        "startedon": "2025-01-02", //mar5
+        "completedon": "2023-01-02", //apr25
+        "weightage": 40,
+        "milestone": 30
+    },
+    {
+        
+        "id": 12,
+        "refid": 1,
+        "startedon": "2023-01-02", //mar-04
+        "completedon": "2025-01-02", //mar 24
+        "weightage": 30,
+        "milestone":30
+  
+    },
+    
+    {
+        
+        "id": 3,
+        "refid": 2,
+        "startedon": "2022-04-01", //apr-01
+        "completedon": "2019-04-15", //apr-15
+        "weightage": 15,
+        "milestone": 10
+      },
+      {
+    
+        "id": 4,
+        "refid": 2,
+        "startedon": "2020-03-03", //mar3 mar-3
+        "completedon": "2022-05-15", //may15
+        "weightage": 10,
+        "milestone": 100
+      },
+      {
+        
+        "id": 5,
+        "refid": 2,
+        "startedon": "2022-03-05", //mar-05 
+        "completedon": "2022-03-24", //mar24
+        "weightage": 5,
+        "milestone": 10
+      },
+      {
+        
+        "id": 7,
+        "refid": 6,
+        "startedon": "2002-01-02", //mar10
+        "completedon": "2032-01-02", //mar25
+        "weightage": 6,
+        "milestone": 30
+      },
+    
+    {
+        
+        "id": 8,
+        "refid": 7,
+        "startedon": "2000-04-01", //apr-1
+        "completedon": "2033-04-25", //apr-25
+        "weightage": 20,
+        "milestone": 7.5
+      },
+      {
+        
+        "id": 9,
+        "refid": 7,
+        "startedon": "2022-04-05", //apr-05
+        "completedon": "2029-04-25", //apr-25
+        "weightage": 10,
+        "milestone": 7.5
+      },
+      {
+        
+        "id": 10,
+        "refid": 7,
+        "startedon": "2022-03-25", //mar-25
+        "completedon": "2022-04-05", //apr-05
+        "weightage": 10,
+        "milestone": 7.5
+      },
+      {
+        
+        "id": 11,
+        "refid": 7,
+        "startedon": "2022-03-05", //mar-05
+        "completedon": "2022-04-25", //mar-25
+        "weightage": 10,
+        "milestone": 7.5
+      }
+      
+]
