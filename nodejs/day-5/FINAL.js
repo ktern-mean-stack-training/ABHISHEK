@@ -260,7 +260,7 @@ function segregatedata(data,parentId){
     }
 
     console.log("this is the child of parent:",parId);
-    console.log(childrens)
+    // console.log(childrens)
 
     
     //==calling functions====
@@ -315,7 +315,7 @@ function segregatedata(data,parentId){
 
     }
     console.log(".............................this is the segdata at the function.......................................")
-    console.log(data);
+    // console.log(data);
 
 
 
@@ -398,7 +398,10 @@ app.put("/updates",(req,res)=>{
     const data = req.body;
 
     for (let i=0; i<data.length;i++){
-      if (data[i].refid===" "){
+      if (data[i].refid===""){
+          console.log("this is the parent bro:")
+          console.log(data[i].id)
+          console.log("===========================================")
           const parentId = data[i].id 
           
           segdata = segregatedata(data,parentId); //this function follows the rolling up approach

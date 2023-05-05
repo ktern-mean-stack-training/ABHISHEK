@@ -1,5 +1,4 @@
-
-//a copy of FINAL.js [for reference only]
+//A COPY OF FINAL.js JUST FOR REFERENCE
 
 /*
 This is an API to update the starteddate and completeddate of a table of tasks data.
@@ -202,7 +201,7 @@ function getmax(childtasks){
 //To add the weightage of the child tasks
 function getadd(childtasks){
 
-    let weight =0;
+    let weight = 0;
     for (i=0;i<(childtasks.length);i++){
       weight+= childtasks[i].weightage
     }
@@ -263,7 +262,7 @@ function segregatedata(data,parentId){
     }
 
     console.log("this is the child of parent:",parId);
-    console.log(childrens)
+    // console.log(childrens)
 
     
     //==calling functions====
@@ -318,7 +317,9 @@ function segregatedata(data,parentId){
 
     }
     console.log(".............................this is the segdata at the function.......................................")
-    console.log(data);
+    // console.log(data);
+
+
 
     //========for parent taks=========== 
 
@@ -361,7 +362,7 @@ function segregatedata(data,parentId){
 
     min = getmin (parentchildrens); //startedon
     max = getmax(parentchildrens);  //completedon
-    wei = getadd(parentchildrens) //to add the weights
+    wei =getadd(parentchildrens);
     //=======================
     console.log("this is the min of childrens at seg2..........");
     console.log(min)
@@ -378,111 +379,17 @@ function segregatedata(data,parentId){
         if (data[i].id === par2){
             data[i].startedon=min; //updating startedon of parent
             data[i].completedon=max; //updating completedon of parent
-            data[i].weightage=wei;
+            data[i].weightage=wei
         }
     }
 
     //==========================================================================================
-
-    //======================================
     return (data)
-    //======================================        
+      
     
 }
 
 //===================================================================================== 
-  
-//function to segregate the data into parent and its child
-
-function segregatedata2(data2,parentId){
-
-    let parId= parentId;
-    let data =data2
-
-    console.log("..........................at segregatedata2 function.................................")
-    console.log("at seg2 this is the sent from seg1")
-    console.log(data)
-    
-    let childrens =[]   //an array to store the childtasks
-    
-    
-    for (let i=1; i<data.length;i++){
-
-    
-
-        if(data[i].refid === parseInt(parId)){
-        
-        let id = data[i].id;
-        let refid = data[i].refid;
-        let startedon = data[i].startedon;
-        let completedon = data[i].completedon;
-        let weightage = data[i].weightage;
-        let milestone =  data[i].milestone;
-
-        const date = {
-            id, refid,startedon, completedon,weightage,milestone
-            
-        }
-        
-        // const grandChildTasks = segregatedata(data,data[i].id);  // a recursive function to fetch grand child tasks 
-        // childrens.push(date,grandChildTasks); //if to push the grand child
-        childrens.push (date);
-    }
-
-    }
-
-    console.log("this is the child of parent:",parId,"at seg2");
-    console.log(childrens)
-
-    
-    //==calling functions====
-
-    min = getmin (childrens); //startedon
-    max = getmax(childrens);  //completedon
-    //=======================
-    console.log("this is the min of childrens at seg2..........");
-    console.log(min)
-    console.log("this is the max of childrens at seg2.......... ");
-    console.log(max)
-
-    //FINDING THE PARENT
-    const par = childrens[0].refid
-    
-    console.log("this is the id of tha parent at seg2..................................");
-    console.log(par)
-
-    for (let i=0; i<data.length;i++){
-        if (data[i].id === par){
-            data[i].startedon=min; //updating startedon of parent
-            data[i].completedon=max; //updating completedon of parent
-        }
-    }
-
-
-
-    // for(let i=0;i<childrens.length;i++){
-    //     taskid = childrens[i].id
-
-    //     for (let j=0;j<data.length;j++){
-    //         if (data[j].refid === taskid){
-    //             segregatedata(data,taskid)
-    //             // i+=1;
-    //     }
-        
-    // }
-
-    // }
-
-
-    //======================================
-    return (data)
-    //======================================        
-    
-}
-
-
-
-
 
 //================================================APIS==========================================================================
 
@@ -491,35 +398,37 @@ app.put("/updates",(req,res)=>{
 
     console.log("at updates.....")
     const data = req.body;
-    const parentId = data[0].id;
 
-    console.log(data)
+    for (let i=0; i<data.length;i++){
+      if (data[i].refid===""){
+          console.log("this is the parent bro:")
+          console.log(data[i].id)
+          console.log("===========================================")
+          const parentId = data[i].id 
+          
+          segdata = segregatedata(data,parentId); //this function follows the rolling up approach
+          mile = getmile(data,parentId) // this function follows the rollowing down approach
+
+      }
+    }
+    // const parentId = data[0].id;
+
+    // console.log(data)
 
     //Sending the data to a function to segregate the parent and its child tasks
 
-    segdata = segregatedata(data,parentId);
-    // segdata2= segregatedata2(segdata,parentId);
-
-    mile = getmile(data,parentId)
+    
     //=========================
-
     res.send(segdata)
     //=========================
 
 });
-
-
-
-
-
 
 //====================================================================================================================================
 app.listen(4000,()=>{
     console.log("app running at port 4000")
 });
 //====================================================================================================================================
-
-
 
 
 /*
